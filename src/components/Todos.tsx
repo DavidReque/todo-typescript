@@ -1,4 +1,16 @@
-export const Todos: React.FC = ({todos}) => {
+type Todo = {
+    id: string,
+	title: string,
+	completed: boolean
+}
+
+type ListOfTodos = Todo[]
+
+interface Props {
+    todos: ListOfTodos
+}
+
+export const Todos: React.FC<Props> = ({todos}) => {
     return (
         <ul>
             {

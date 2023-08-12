@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, {useState} from 'react'
 
 const mockTodos = [
 	{
@@ -20,11 +20,11 @@ const mockTodos = [
 
 const App = (): JSX.Element => {
 
-	const [mockTodos, setMockTodos] = useState(mockTodos)
+	const [todos, setTodos] = useState(mockTodos)
 
 	return (
 		<>
-			<Todos mockTodos={mockTodos}/>
+			<Todos todos={todos}/>
 		</>
 	);
 }
