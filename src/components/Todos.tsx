@@ -1,10 +1,4 @@
-type Todo = {
-    id: string,
-	title: string,
-	completed: boolean
-}
-
-type ListOfTodos = Todo[]
+import {type ListOfTodos} from '../types'
 
 interface Props {
     todos: ListOfTodos
