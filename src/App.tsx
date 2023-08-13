@@ -1,11 +1,11 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import { Todos } from './components/Todos'
 
 const mockTodos = [
 	{
 		id: '1',
 		title: 'todo 1',
-		completed: false
+		completed: true
 	},
 	{
 		id: '2',
@@ -23,10 +23,16 @@ const App = (): JSX.Element => {
 
 	const [todos, setTodos] = useState(mockTodos)
 
+	const handleRemove = (id: string): void => {
+		const newTodos = todos.filter(todo => todo.id !== id)
+		setTodos(newTodos)
+	}
+
 	return (
-		<>
-			<Todos todos={todos}/>
-		</>
+		<div className='todoapp'>
+			<Todos todos={todos}
+			handleRemove={handleRemove}/>
+		</div>
 	);
 }
 
