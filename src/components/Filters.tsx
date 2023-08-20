@@ -8,7 +8,7 @@ interface Props {
 
 export const Filters: React.FC<Props> = ({filterSelected, onFilterChange}) => {
     return (
-        <ul>
+        <ul className="filters">
             {
                 Object.entries(FILTERS_BUTTONS).map(([key, {href, literal}]) => {
                     const isSelected = key === filterSelected
